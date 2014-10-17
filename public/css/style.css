@@ -1,0 +1,121 @@
+* {
+  @include box-sizing(border-box);
+}
+html{
+  height: 100% !important;
+  background-color: #fff;
+}
+body{
+  height: 100% !important;
+}
+
+.block {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  background: url(../assets/bg.png) top right no-repeat;
+  background-size: cover;
+}
+.notification {
+  padding-top: 10px;
+  float: right;
+  height: 100%;
+  width: 270px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.user {
+  padding-top: 20px;
+  height: 100%;
+  width: 400px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #eee;
+  box-shadow: 1px 0px 10px #777;
+}
+
+.img-circular {
+  border-radius: 80%;
+  width: 7em;
+  height: 7em;
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  margin: 0 auto;
+  z-index: 999 !important;
+  border: 1px solid #eee;
+
+}
+
+.usr-info {
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.Yia {
+  margin-bottom: 15px;
+}
+
+.Xia {
+  font-size: 20px;
+  color: #791e74 !important;
+}
+.lnd{
+  margin: 0 auto;
+  width: 280px;
+}
+.Ny{
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.xay{
+  text-align: left;
+}
+
+#dialPad{
+  position: fixed;
+  margin-top: 200px;
+  margin-left: 410px !important;
+  float: left;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+#dialPad div button{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  padding: 10px;
+  width: 45px;
+  background-color: #fff;
+  border: 2px solid #791e74;
+  color: #791e74;
+  font-size: 1.1em;
+}
+#dialPad div button:hover{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  padding: 10px;
+  width: 45px;
+  background-color: #791e74;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1.1em;
+}

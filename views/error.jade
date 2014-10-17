@@ -1,0 +1,96 @@
+extends layout
+
+block style
+    link(rel='stylesheet', type='text/css', href='/css/normalize.css')
+    link(rel='stylesheet', type='text/css', href='/css/fontello.css')
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/main.css')
+    link(rel='shortcut icon', type='image/x-icon', href='https://www.voxbone.com/images/favicon.png')
+    link(rel='icon', type='video/x-png', href='https://www.voxbone.com/images/favicon.png')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lato:300',type='text/css')
+
+    style.
+        body{
+            background: url(../assets/bg_home.png) no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+        #notification{
+            position: fixed;
+            float: right;
+            margin-right: 1em;
+            width: 250px;
+            padding: 1em;
+            background-color: #fff;
+            color: #965592;
+            border-radius: 4px;
+            font-size: 1em;
+            opacity: 0.8;
+            transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+        }
+        #notification.appear{
+            padding: 1em;
+            font-size: 0.9em;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -webkit-transition: all 0.3s ease-in-out;
+        }
+        #notification a {
+            -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+            -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+            box-shadow:inset 0px 1px 0px 0px #ffffff;
+            background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+            background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+            background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+            background-color:#ffffff;
+            -moz-border-radius:6px;
+            -webkit-border-radius:6px;
+            border-radius:6px;
+            border:1px solid #dcdcdc;
+            display:inline-block;
+            cursor:pointer;
+            color:#965592;
+            font-family:arial;
+            font-size:15px;
+            font-weight:bold;
+            padding:11px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #ffffff;
+        }
+        #notification a:hover {
+            background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+            background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+            background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+            background-color:#f6f6f6;
+        }
+        #notification a:active {
+            position:relative;
+            top:1px;
+        }
+
+block content
+        .notification
+            #notification
+              p  Get set up quickly and receive 5 free SIP channels for your application!
+              a(href="mailto:webrtc@voxbone.com?Subject=Interested%20in%20Developing%20Awesome%20WebRTC%20Apps" target="_top") Get Started
+        #title
+            p.noborder No employee with that name :(
+
+

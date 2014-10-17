@@ -1,0 +1,104 @@
+extends layout
+
+block style
+    link(rel='stylesheet', type='text/css', href='/css/normalize.css')
+    link(rel='stylesheet', type='text/css', href='/css/fontello.css')
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/style.css')
+    link(rel='stylesheet', type='text/css', href='/css/main.css')
+    link(rel='shortcut icon', type='image/x-icon', href='https://www.voxbone.com/images/favicon.png')
+    link(rel='icon', type='video/x-png', href='https://www.voxbone.com/images/favicon.png')
+
+block script
+  script(src='https://webrtc.voxbone.com/js/voxbone-0.0.2.js',type='text/javascript')
+  script(src='https://webrtc.voxbone.com/js/jssip-0.3.0.js',type='text/javascript')
+  script(src='/js/stopwatch.js',type='text/javascript')
+  script(src='/js/call.js',type='text/javascript')
+  script.
+    $( function() {
+      init(#{voxrtc_config}, #{user.phone_number});
+      console.log(#{voxrtc_config});
+      console.log(#{phone_number});
+
+    });
+
+block content
+    .block
+      .notification
+        #notification
+          p  Get set up quickly and receive 5 free SIP channels for your application!
+          a(href="mailto:webrtc@voxbone.com?Subject=Interested%20in%20Developing%20Awesome%20WebRTC%20Apps" target="_top") Get Started
+      if user.first_name == "Voxbone"
+        #dialPad
+          div
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(1)') 1
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(2)') 2
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(3)') 3
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(4)') 4
+          div
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(5)') 5
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(6)') 6
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(7)') 7
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(8)') 8
+          div
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(9)') 9
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(0)') 0
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(*)') *
+            button(type='button', onclick='voxbone.WebRTC.sendDTMF(#)') #
+
+      .user
+        if user.picture_url
+        .img-circular(style = 'background-image: url(#{user.picture_url});')
+        hr
+        .usr-info
+          .rHa
+            .Yia
+              .gZa
+                .rna.KXa.Xia.name= user.first_name + ' ' + user.last_name
+              .EXa.Plb
+                if user.position
+                span.J9a.position= user.position
+
+            .Yia.Frc.VQc
+              .Nyb
+                .Ny
+                  if user.department
+                  span.J9a.team= user.department
+                  br
+
+                  span.J9a.office= user.city + ', ' + user.country
+            .Yia.Frc.VQc
+              .Nyb.lnd
+                .Ny.xay
+                  br
+                  span.J9a.email
+                    span.email-icon
+                    a(href='mailto:#{user.email}')= user.email
+                  br
+                  if user.skype_id
+                    span.J9a.skype
+                      span.skype-icon
+                      a(href='skype:#{user.skype_id}?add')= user.skype_id
+                    br
+                  span.J9a.phone
+                    span.phone-icon
+                    span.J9a#number.work= user.phone_number
+
+          button#dial(type='button', onclick='makeCall(#{user.phone_number});')
+            i#phone-dial.icon-phone
+          button#hangup.options(type='button', onclick='voxbone.WebRTC.hangup();')
+            i.icon-phone
+          button#mute.options(type='button', onclick='toggleMute()')
+            i.icon-mute
+
+          .reception
+            p Is the person you want to reach not available?
+            a(href='/reception') Call our reception!
+
+          p.disclaimer
+            | You are now calling Voxbone using
+            a(href='http://www.ucstrategies.com/unified-communications-expert-views/voxbone-offers-global-webrtc.aspx')  Voxbone's WebRTC service
+            | .   Calls are routed internationally using Voxbone's global data network.   Please note that the quality of this call is dependent of the quality of your internet connection and your microphone.
+          a.branding(href='https://github.com/voxbone')
+

@@ -1,7 +1,7 @@
 supportRTC
 ==========
 
-This repo is the code for [this tutorial](http://blog.voxbone.com/voxbone-crm-bot/)
+This repo is the code for [this tutorial](http://blog.voxbone.com/voxbone-crm-bot/) on how to build a Twitter Support Line Bot
 
 It is a Nodejs app built with WebRTC to create a support hotline straight from a user's browser. The app is available here: [http://voxbone-click2call.rhcloud.com/support](http://voxbone-click2call.rhcloud.com/support)
 

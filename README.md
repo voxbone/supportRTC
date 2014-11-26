@@ -19,11 +19,16 @@ To install:
     default_username: 'your_username',
     default_secret: 'your_webrtc_secret_key'
 ```
+######3. Start th MongoDB
 
-######3. Start the application
+```
+    cd NAME_OF_DIRECTORY
+    mongod
+```    
+######4. Start the application
 
 ```
     npm start
 ```    
 
-######4. Access it via [http://localhost:3000](http://localhost:3000)
+######5. Access it via [http://localhost:3000/support](http://localhost:3000/support)
